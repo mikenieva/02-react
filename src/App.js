@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+// ./src/App.js
+
+// 1. IMPORTACIONES
 import './App.css';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './components/Home';
+import Exercise from './components/Exercise';
+
+// 2. FUNCIÓN
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Establecemos configuración de ruteo
+    <BrowserRouter>
+    {/* Establecer la lista de rutas */}
+      <Routes>
+        {/* Establecer una ruta individual */}
+        <Route path="/" element={ <Home /> } />
+        <Route path="/ejercicio" element={ <Exercise /> } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
+// 3. EXPORTACIÓN
 export default App;
